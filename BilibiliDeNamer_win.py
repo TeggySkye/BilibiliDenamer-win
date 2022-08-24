@@ -94,6 +94,14 @@ for f_path, dir_name, f_names in os.walk(download_dir):
                             '''new_name = title'''
                             new_name = text_content[title_numb_start + 1:title_numb_end] + ".mp4"
                             new_name = new_name.replace('\\', '')  # \\表示\
+                            new_name = new_name.replace(' ', '_')
+                            new_name = new_name.replace('/', '')
+                            new_name = new_name.replace(':', '')
+                            new_name = new_name.replace('*', '')
+                            new_name = new_name.replace('?', '')
+                            new_name = new_name.replace('<', '')
+                            new_name = new_name.replace('>', '')
+                            new_name = new_name.replace('|', '')
                             print(new_name, end='')
                             f.close()
                             new_name_path = f_path + '/' + new_name
